@@ -19,7 +19,7 @@ $name = pg_fetch_row($name_query)[0];
 <body>
     <p>Ahora mismo tu nombre de perfil es <?= $name ?>, ¿deseas cambiarlo?</p>
     <form action="query.php" method="post">
-    <input type="text" name="name" id="name" placeholder="nuevo nombre">
+    <input type="text" size="160" name="name" id="name" placeholder="nuevo nombre">
     <input type="submit" value="Cambiar">
     </form>
 </body>
