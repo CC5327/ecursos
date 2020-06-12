@@ -3,7 +3,8 @@ require_once("config.php");
 $connstr = "host=$DB_HOST port=$DB_PORT dbname=$DB_NAME user=$DB_USER password=$DB_PASS";
 $conn = pg_pconnect($connstr);
 if (isset($_POST["name"])){
-        $query = pg_query($conn, "UPDATE users SET name='$_POST["name"]' WHERE id = 1");
+    $new_name = $_POST['name'];
+        $query = pg_query($conn, "UPDATE users SET name='$new_name' WHERE id = 1");
     }
 $nombre = pg_query($conn, "SELECT name FROM users WHERE id = 1");
 
