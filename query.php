@@ -7,7 +7,7 @@ if (isset($_POST["name"])){
         $query = pg_query($conn, "UPDATE users SET name='$new_name' WHERE id = 1");
     }
 $name_query = pg_query($conn, "SELECT name FROM users WHERE id = 1");
-$name = pg_fetch_row($query)[0];
+$name = pg_fetch_row($name_query)[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">
