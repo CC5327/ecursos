@@ -1,2 +1,3 @@
 # Web Vulnerabilities Demonstration code
-Demonstration server with PostgreSQL and 
+* XSS-injected web page with example code (index.php)
+* Blind SQL injection (query.php)
