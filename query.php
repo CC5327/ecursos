@@ -6,9 +6,8 @@ if (isset($_POST["name"])){
     $new_name = $_POST['name'];
         $query = pg_query($conn, "UPDATE users SET name='$new_name' WHERE id = 1");
     }
-$nombre = pg_query($conn, "SELECT name FROM users WHERE id = 1");
-
-
+$name_query = pg_query($conn, "SELECT name FROM users WHERE id = 1");
+$name = pg_fetch_row($query)[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +17,7 @@ $nombre = pg_query($conn, "SELECT name FROM users WHERE id = 1");
     <title>Actualizar tu nombre de perfil</title>
 </head>
 <body>
-    <p>Ahora mismo tu nombre de perfil es <?= $nombre ?>, ¿deseas cambiarlo?</p>
+    <p>Ahora mismo tu nombre de perfil es <?= $name ?>, ¿deseas cambiarlo?</p>
     <form action="./" method="post">
     <input type="text" name="name" id="name" placeholder="nuevo nombre">
     <input type="submit" value="Cambiar">
